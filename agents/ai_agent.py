@@ -96,7 +96,7 @@ def summarize_ai_news(articles: list[dict]) -> str:
     if not articles:
         return "No AI news articles found for today."
 
-    client = Groq(api_key=os.environ["GROQ_API_KEY"])
+    client = Groq(api_key=os.environ["GROQ_API_KEY"].strip())
 
     # Format article list for the prompt
     article_lines = []
