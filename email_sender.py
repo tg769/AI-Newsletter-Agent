@@ -12,9 +12,9 @@ def send_briefing(subject: str, html_body: str) -> None:
     Send the morning briefing email via Gmail SMTP.
     Requires GMAIL_ADDRESS, GMAIL_APP_PASSWORD, and RECIPIENT_EMAIL in .env
     """
-    gmail_address = os.environ["GMAIL_ADDRESS"]
-    app_password = os.environ["GMAIL_APP_PASSWORD"]
-    recipient = os.environ["RECIPIENT_EMAIL"]
+    gmail_address = os.environ["GMAIL_ADDRESS"].strip()
+    app_password = os.environ["GMAIL_APP_PASSWORD"].strip()
+    recipient = os.environ["RECIPIENT_EMAIL"].strip()
 
     msg = MIMEMultipart("alternative")
     msg["Subject"] = subject
